@@ -21,7 +21,7 @@ app.get('/', (req, res) => {
   const con = mysql.createConnection(config);
   con.query('SELECT name FROM people', (err, results) => {
     res.send(`
-      <h1>Full Cycle!!</h1>
+      <h1>Full Cycle Rocks!</h1>
       <br/> 
       <ul>
         ${results.map(person => `<li>${person.name}</li>`).join('')}
