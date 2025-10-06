@@ -4,8 +4,6 @@ services:
       context: .
     networks:
       - node-net
-    volumes:
-      - ./:/usr/src/app
     tty: true
     container_name: app
     # Await for db to be ready before starting the app, using dockerize
