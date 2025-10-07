@@ -6,6 +6,9 @@ services:
       - node-net
     tty: true
     container_name: app
+    volumes: 
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
     # Await for db to be ready before starting the app, using dockerize
     command: dockerize -wait tcp://db:3306 -timeout 20s node index.js
     depends_on:
