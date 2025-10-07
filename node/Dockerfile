@@ -2,10 +2,9 @@ FROM node:22
 
 WORKDIR /usr/src/app
 
-COPY package.json package-lock.json index.js ./
+COPY . .
 
-RUN npm i
-
+RUN apt-get update && apt-get install -y wget
 ENV DOCKERIZE_VERSION=v0.9.6
 RUN apt-get update \
   && apt-get install -y wget \
